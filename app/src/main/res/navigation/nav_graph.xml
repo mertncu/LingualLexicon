@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/randomWordsFragment">
+
+    <fragment
+        android:id="@+id/randomWordsFragment"
+        android:name="com.eosdev.linguallexicon.ui.random.RandomWordsFragment"
+        android:label="fragment_random_words"
+        tools:layout="@layout/fragment_random_words">
+        <action
+            android:id="@+id/actionRandomWordsToDetail"
+            app:destination="@id/randomWordsDetailFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_left2"
+            app:popEnterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right2" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnedWordsFragment"
+        android:name="com.eosdev.linguallexicon.ui.learned.LearnedWordsFragment"
+        android:label="fragment_learned_words"
+        tools:layout="@layout/fragment_learned_words">
+        <action
+            android:id="@+id/actionLearnedWordsToDetail"
+            app:destination="@id/learnedWordsDetailFragment"
+            app:enterAnim="@anim/slide_right2"
+            app:exitAnim="@anim/slide_left2"
+            app:popEnterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomWordsDetailFragment"
+        android:name="com.eosdev.linguallexicon.ui.random.RandomWordsDetailFragment"
+        android:label="fragment_random_words_detail"
+        tools:layout="@layout/fragment_random_words_detail">
+        <argument
+            android:name="wordModel"
+            app:argType="com.eosdev.linguallexicon.data.model.Word" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnedWordsDetailFragment"
+        android:name="com.eosdev.linguallexicon.ui.learned.LearnedWordsDetailFragment"
+        android:label="fragment_learned_words_detail"
+        tools:layout="@layout/fragment_learned_words_detail">
+        <argument
+            android:name="wordModel"
+            app:argType="com.eosdev.linguallexicon.data.model.Word" />
+    </fragment>
+</navigation>
