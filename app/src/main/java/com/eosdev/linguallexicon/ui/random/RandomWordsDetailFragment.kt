@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.eosdev.linguallexicon.data.model.Word
@@ -72,7 +73,7 @@ class RandomWordsDetailFragment : Fragment(), TextToSpeech.OnInitListener {
 
             btnLearned.setOnClickListener {
                 markWordAsLearned()
-                Snackbar.make(it, "${word.englishName} Learned!", Snackbar.LENGTH_SHORT).show()
+                Toast.makeText(it.context, "Congrats!, Word '' ${word.englishName} '' Learned!", Toast.LENGTH_SHORT).show()
                 findNavController().navigateUp()
             }
         }

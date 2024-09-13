@@ -99,7 +99,6 @@ class RandomWordsFragment : Fragment() {
             Gson().fromJson(it, Array<Word>::class.java).toList()
         } ?: emptyList()
 
-        // Kategori filtrelemesi ekleniyor
         val selectedCategories = getSelectedCategories()
         return wordList.filterNot { word ->
             learnedWords.contains(word) || !selectedCategories.contains(word.category)
