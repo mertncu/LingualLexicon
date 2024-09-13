@@ -20,10 +20,10 @@ import com.google.gson.Gson
 
 class RandomWordsFragment : Fragment() {
 
-    private lateinit var binding: FragmentRandomWordsBinding
+    lateinit var binding: FragmentRandomWordsBinding
     private val viewModel: WordsViewModel by viewModels()
     private lateinit var adapter: WordsAdapter
-    private var fullWordList: List<Word> = emptyList()
+    var fullWordList: List<Word> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -45,7 +45,7 @@ class RandomWordsFragment : Fragment() {
         }
     }
 
-    private fun initializeAdapter() {
+    fun initializeAdapter() {
         adapter = WordsAdapter(emptyList()) { wordModel ->
             navigateToRandomWordDetail(wordModel)
         }
@@ -74,7 +74,7 @@ class RandomWordsFragment : Fragment() {
         })
     }
 
-    private fun filterWords(query: String?) {
+    fun filterWords(query: String?) {
         val filteredList = if (!query.isNullOrEmpty()) {
             fullWordList.filter {
                 it.englishName.contains(query, ignoreCase = true) || it.turkishName.contains(query, ignoreCase = true)
@@ -85,7 +85,7 @@ class RandomWordsFragment : Fragment() {
         updateAdapter(filteredList)
     }
 
-    private fun updateAdapter(newWordList: List<Word>) {
+    fun updateAdapter(newWordList: List<Word>) {
         adapter.wordList = newWordList
         adapter.notifyDataSetChanged()
     }

@@ -11,11 +11,10 @@ android {
     defaultConfig {
         applicationId = "com.eosdev.linguallexicon"
         minSdk = 24
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -41,8 +40,16 @@ android {
 }
 
 dependencies {
-    implementation (libs.lottie)
-    implementation (libs.gson)
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.fragment:fragment-testing:1.6.1")
+    implementation(libs.androidx.junit.ktx)
+    testImplementation("org.mockito:mockito-core:5.2.0")
+    testImplementation("org.mockito:mockito-inline:5.2.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
+    implementation(libs.lottie)
+    implementation(libs.gson)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
@@ -51,6 +58,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.fragment.testing)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
