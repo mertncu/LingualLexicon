@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7FFFA"
-    android:backgroundTint="#F7FFFA"
+    android:background="#F0F2FF"
+    android:backgroundTint="#F0F2FF"
     android:orientation="vertical"
     tools:context=".ui.fragment.RandomWordsDetailFragment">
 
@@ -16,7 +16,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/fragment_color"
+        android:backgroundTint="#6E73F4"
         android:drawableLeft="@drawable/ic_learn"
         android:text="Add To Learned List"
         android:textSize="14sp"
@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="#000000"
+        android:fontFamily="@font/nanum_gothic_regular"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,6 +49,7 @@
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:fontFamily="@font/nanum_gothic_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toEndOf="@+id/ivTurkish"
@@ -64,6 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listenEnglish" />
 
+
     <ImageView
         android:id="@+id/ivEnglish"
         android:layout_width="100dp"
@@ -78,11 +81,22 @@
         android:id="@+id/listenEnglish"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="44dp"
         android:src="@drawable/ic_sound"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivEnglish" />
+
+
+    <TextView
+        android:layout_width="119dp"
+        android:layout_height="23dp"
+        android:text="Click to listen"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listenEnglish" />
 
     <ImageView
         android:id="@+id/ivWord"
@@ -103,6 +117,16 @@
         android:src="@drawable/ic_sound"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivTurkish" />
+
+    <TextView
+        android:layout_width="198dp"
+        android:layout_height="44dp"
+        android:text="Dinlemek için tıkla"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listenTurkish" />
 
     <TextView
         android:id="@+id/tvEnglishSentence"
@@ -137,6 +161,18 @@
         android:layout_marginTop="16dp"
         android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvBackText" />
+
+    <TextView
+        android:id="@+id/tvBackText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Words Screen"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

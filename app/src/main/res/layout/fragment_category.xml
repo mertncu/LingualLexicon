@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F0F2FF"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select the categories you want to learn"
+        android:textSize="18sp"
+        android:fontFamily="@font/nanum_gothic_regular"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center_horizontal" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:alignmentMode="alignMargins"
+        android:layout_margin="8dp"
+        android:padding="4dp">
+
+        <Switch
+            android:id="@+id/switch_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Food" />
+
+        <Switch
+            android:id="@+id/switch_electronics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Electronics" />
+
+        <Switch
+            android:id="@+id/switch_furniture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Furniture" />
+
+        <Switch
+            android:id="@+id/switch_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Home" />
+
+        <Switch
+            android:id="@+id/switch_clothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Clothing" />
+
+        <Switch
+            android:id="@+id/switch_personal_care"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Personal Care" />
+
+        <Switch
+            android:id="@+id/switch_decor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Decor" />
+
+        <Switch
+            android:id="@+id/switch_tools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Tools" />
+
+        <Switch
+            android:id="@+id/switch_transportation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Transportation" />
+
+        <Switch
+            android:id="@+id/switch_kitchen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Kitchen" />
+
+        <Switch
+            android:id="@+id/switch_stationery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Stationery" />
+
+        <Switch
+            android:id="@+id/switch_education"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:track="@drawable/bg_track"
+            android:thumb="@drawable/ic_thumb"
+            android:text="Education" />
+    </GridLayout>
+</LinearLayout>

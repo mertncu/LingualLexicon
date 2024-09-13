@@ -11,7 +11,7 @@
         android:layout_width="190dp"
         android:layout_height="260dp"
         android:layout_margin="10dp"
-        android:backgroundTint="#E4E4E4"
+        android:backgroundTint="#FFFFFF"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp">
 
@@ -44,18 +44,19 @@
             <TextView
                 android:id="@+id/tvTurkishWordName"
                 android:layout_width="0dp"
+                android:fontFamily="@font/nanum_gothic_extra_bold"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:textStyle="italic"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageViewTurkish"
                 app:layout_constraintTop_toBottomOf="@+id/ivWord"
                 tools:text="Klavye" />
 
-            <!-- İngilizce Kelime -->
             <ImageView
                 android:id="@+id/imageViewEnglish"
                 android:layout_width="30dp"
@@ -75,7 +76,9 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:textSize="18sp"
-                android:textStyle="bold"
+                android:textStyle="italic"
+                android:fontFamily="@font/nanum_gothic_regular"
+                android:textColor="#838383"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageViewEnglish"
                 app:layout_constraintTop_toBottomOf="@+id/tvTurkishWordName"

@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.eosdev.linguallexicon.data.model.Word
-import com.eosdev.linguallexicon.databinding.ItemLayoutWordsListBinding
+import com.eosdev.linguallexicon.databinding.ItemWordBinding
 
 class WordsAdapter(
     var wordList: List<Word>, private val onClickListener: (Word) -> Unit
 ) : RecyclerView.Adapter<WordsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordsViewHolder {
         val binding =
-            ItemLayoutWordsListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemWordBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return WordsViewHolder(binding)
     }
 
