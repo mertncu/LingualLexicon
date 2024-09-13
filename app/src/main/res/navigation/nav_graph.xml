@@ -12,11 +12,7 @@
         tools:layout="@layout/fragment_random_words">
         <action
             android:id="@+id/actionRandomWordsToDetail"
-            app:destination="@id/randomWordsDetailFragment"
-            app:enterAnim="@anim/slide_right"
-            app:exitAnim="@anim/slide_left2"
-            app:popEnterAnim="@anim/slide_left"
-            app:popExitAnim="@anim/slide_right2" />
+            app:destination="@id/randomWordsDetailFragment"/>
     </fragment>
     <fragment
         android:id="@+id/learnedWordsFragment"
@@ -25,11 +21,7 @@
         tools:layout="@layout/fragment_learned_words">
         <action
             android:id="@+id/actionLearnedWordsToDetail"
-            app:destination="@id/learnedWordsDetailFragment"
-            app:enterAnim="@anim/slide_right2"
-            app:exitAnim="@anim/slide_left2"
-            app:popEnterAnim="@anim/slide_left"
-            app:popExitAnim="@anim/slide_right" />
+            app:destination="@id/learnedWordsDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/randomWordsDetailFragment"

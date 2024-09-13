@@ -36,7 +36,7 @@ Lingual Lexicon, dil öğrenme süreçlerine katkıda bulunmak için kelimeleri 
 
 1. **Projenin Klonlanması:**
    git clone [GitHub Depo URL'si]
-   Gerekli Bağımlılıkların Yüklenmesi:
+2. **Gerekli Bağımlılıkların Yüklenmesi:**
 
 - Android Studio'yu açın ve projeyi yükleyin.
 - Proje bağımlılıklarını yüklemek için Gradle'ı senkronize edin.
