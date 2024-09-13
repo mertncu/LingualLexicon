@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/randomWordsFragment"
-        android:icon="@drawable/baseline_home_24"
-        android:title="Home" />
+        android:icon="@drawable/ic_words"
+        android:title="Words" />
     <item
         android:id="@+id/learnedWordsFragment"
-        android:icon="@drawable/learned_page_icon"
-        android:title="Learned" />
+        android:icon="@drawable/ic_learned"
+        android:title="Learned Words" />
+
+    <item
+        android:id="@+id/categoryFragment"
+        android:icon="@drawable/ic_category"
+        android:title="Categories" />
 </menu>
