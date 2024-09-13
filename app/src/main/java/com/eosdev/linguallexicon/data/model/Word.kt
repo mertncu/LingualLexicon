@@ -9,6 +9,7 @@ data class Word(
     val englishSentence:String,
     val turkishSentence:String,
     val turkishName: String,
+    val category: String,
     var isLearned: Boolean = false
 ) : Serializable
 

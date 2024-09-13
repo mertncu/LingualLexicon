@@ -13,58 +13,563 @@ class WordsViewModel : ViewModel() {
     val randomWords: LiveData<List<Word>> = _randomWords
 
     private val allWords = listOf(
-        Word(1, "Computer", R.drawable.desktop, "I use a computer every day.", "Her gün bilgisayar kullanırım.", "Bilgisayar"),
-        Word(2, "Apple", R.drawable.apple, "Eating an apple is my favorite snack.", "Bir elma yemek en sevdiğim atıştırmalık.", "Elma"),
-        Word(3, "Book", R.drawable.book, "Before bed, I read a book.", "Yatmadan önce bir kitap okurum.", "Kitap"),
-        Word(4, "Phone", R.drawable.phone, "My phone is currently ringing.", "Telefonum şu anda çalıyor.", "Telefon"),
-        Word(5, "Table", R.drawable.table, "This table is crafted from wood.", "Bu masa ahşaptan yapılmıştır.", "Masa"),
-        Word(6, "Chair", R.drawable.dining, "This chair is very cozy.", "Bu sandalye oldukça rahat.", "Sandalye"),
-        Word(7, "Lamp", R.drawable.lamp, "The lamp is situated on the desk.", "Lamba masanın üstünde yer alıyor.", "Lamba"),
-        Word(8, "Clock", R.drawable.clock, "The clock reads 3 PM.", "Saat 3'ü gösteriyor.", "Saat"),
-        Word(9, "Cup", R.drawable.cup, "I enjoy my coffee from this cup.", "Bu fincandan kahvemi içerim.", "Fincan"),
-        Word(10, "Notebook", R.drawable.notebook, "I jot down notes in my notebook.", "Defterime notlar alırım.", "Defter"),
-        Word(11, "Sofa", R.drawable.sofa, "I relax on the sofa while watching TV.", "Televizyon izlerken kanepeye otururum.", "Kanepe"),
-        Word(12, "Window", R.drawable.window, "The window is currently open.", "Pencere şu anda açık.", "Pencere"),
-        Word(13, "Pen", R.drawable.pencil, "I use a pen to sign documents.", "Belgeleri imzalamak için kalem kullanırım.", "Kalem"),
-        Word(14, "Door", R.drawable.door, "Please ensure the door is closed.", "Lütfen kapıyı kapalı bırakın.", "Kapı"),
-        Word(15, "Mirror", R.drawable.mirror, "The mirror hangs on the wall.", "Ayna duvarda asılı.", "Ayna"),
-        Word(16, "Bed", R.drawable.bed, "I sleep soundly in this bed.", "Bu yatakta rahatça uyurum.", "Yatak"),
-        Word(17, "Fridge", R.drawable.fridge, "The fridge is filled with groceries.", "Buzdolabı yiyeceklerle dolu.", "Buzdolabı"),
-        Word(18, "Oven", R.drawable.oven, "I use the oven to bake delicious cakes.", "Fırında lezzetli kekler pişiririm.", "Fırın"),
-        Word(19, "Washing Machine", R.drawable.washingmachine, "The washing machine cleans my clothes.", "Çamaşır makinesi kıyafetlerimi temizler.", "Çamaşır Makinesi"),
-        Word(20, "Television", R.drawable.tv, "I watch my favorite shows on the television.", "Televizyonda sevdiğim programları izlerim.", "Televizyon"),
-        Word(21, "Keyboard", R.drawable.keyboard, "I type on this keyboard daily.", "Bu klavye üzerinde her gün yazarım.", "Klavye"),
-        Word(22, "Mouse", R.drawable.mouse, "This wireless mouse is very convenient.", "Bu kablosuz fare oldukça kullanışlı.", "Fare"),
-        Word(23, "Printer", R.drawable.printer, "I use the printer to produce documents.", "Belgeleri yazdırmak için yazıcı kullanırım.", "Yazıcı"),
-        Word(24, "Camera", R.drawable.camera, "I capture memories with my camera.", "Kameramla anılarımı yakalarım.", "Kamera"),
-        Word(25, "Banana", R.drawable.banana, "Bananas are a great source of vitamins.", "Muzlar vitamin açısından zengindir.", "Muz"),
-        Word(26, "Lemon", R.drawable.lemon, "Lemons are known for their tart flavor.", "Limonlar ekşi tatlarıyla bilinir.", "Limon"),
-        Word(27, "Air Conditioner", R.drawable.airconditioner, "The air conditioner keeps the room cool in summer.", "Klima yazın odayı serin tutar.", "Klima"),
-        Word(28, "Fan", R.drawable.fan, "The fan circulates air around the room.", "Vantilatör havayı odada dolaştırır.", "Vantilatör"),
-        Word(29, "Water", R.drawable.water, "I stay hydrated by drinking water.", "Su içerek su ihtiyacımı karşılarım.", "Su"),
-        Word(30, "Cupboard", R.drawable.cupboard, "The cupboard stores various kitchen items.", "Dolap mutfaktaki çeşitli eşyaları saklar.", "Dolap"),
-        Word(31, "Drawer", R.drawable.drawer, "I keep my personal items in the drawer.", "Kişisel eşyalarımı çekmecede saklarım.", "Çekmece"),
-        Word(32, "Shoe", R.drawable.shoes, "These new shoes are very comfortable.", "Bu yeni ayakkabılar oldukça rahat.", "Ayakkabı"),
-        Word(33, "Hat", R.drawable.hat, "I wear a hat to shield from the sun's rays.", "Güneş ışınlarından korunmak için şapka takarım.", "Şapka"),
-        Word(34, "Glasses", R.drawable.glasses, "Glasses help me see things clearly.", "Gözlükler net görmemi sağlar.", "Gözlük"),
-        Word(35, "Watch", R.drawable.wristwatch, "My watch helps me keep track of time.", "Saatim zamanı takip etmemi sağlar.", "Saat"),
-        Word(36, "Bag", R.drawable.bag, "I carry my essentials in this bag.", "Gerekli eşyalarımı bu çantada taşırım.", "Çanta"),
-        Word(37, "Towel", R.drawable.towel, "I use a towel to dry off after a shower.", "Duş sonrası havluyla kurulanırım.", "Havlu"),
-        Word(38, "Toothbrush", R.drawable.toothbrush, "I use a toothbrush to maintain dental hygiene.", "Diş sağlığımı korumak için diş fırçası kullanırım.", "Diş Fırçası"),
-        Word(39, "Soap", R.drawable.soap, "I use soap to clean my hands.", "Ellerimi temizlemek için sabun kullanırım.", "Sabun"),
-        Word(40, "Shampoo", R.drawable.shampoo, "Shampoo is used to wash my hair.", "Saçımı yıkamak için şampuan kullanırım.", "Şampuan"),
-        Word(41, "Brush", R.drawable.brush, "I use a brush to style my hair daily.", "Saçımı her gün taramak için fırça kullanırım.", "Fırça"),
-        Word(42, "Bicycle", R.drawable.bicycle, "I commute to work by bicycle.", "İşe bisikletle gidiyorum.", "Bisiklet"),
-        Word(43, "Ladder", R.drawable.ladder, "I use a ladder to reach high places.", "Yüksek yerlere erişmek için merdiven kullanırım.", "Merdiven"),
-        Word(44, "Pillow", R.drawable.pillow, "I sleep comfortably on a soft pillow.", "Yumuşak bir yastıkta rahatça uyurum.", "Yastık"),
-        Word(45, "Blanket", R.drawable.blanket, "I use a blanket to keep warm at night.", "Gece sıcak kalmak için battaniye kullanırım.", "Battaniye"),
-        Word(46, "Curtain", R.drawable.curtain, "Curtains block out unwanted light.", "Perdeler istenmeyen ışığı engeller.", "Perde"),
-        Word(47, "Umbrella", R.drawable.umbrella, "An umbrella protects me from the rain.", "Şemsiye yağmurdan korur.", "Şemsiye"),
-        Word(48, "Vase", R.drawable.vase, "The vase holds a bouquet of flowers.", "Vazo bir çiçek demetini tutar.", "Vazo"),
-        Word(49, "Plant", R.drawable.plant, "I water the plant regularly to keep it healthy.", "Bitkilerin sağlıklı kalması için düzenli olarak sularım.", "Bitki"),
-        Word(50, "Napkin", R.drawable.napkin, "I use a napkin to clean up spills.", "Sızıntıları temizlemek için peçete kullanırım.", "Peçete")
+        Word(
+            1,
+            "Desktop Computer",
+            R.drawable.computer,
+            "I use a desktop computer for work and gaming.", // English sentence
+            "Çalışmak ve oyun oynamak için masaüstü bilgisayar kullanırım.", // Turkish translation
+            "Masaüstü Bilgisayar",
+            "Electronics"
+        ),
 
-    )
+        Word(
+            2,
+            "Joystick",
+            R.drawable.joystick,
+            "I use a joystick to play video games.",
+            "Video oyunları oynamak için joystick kullanırım.",
+            "Joystick",
+            "Electronics"
+        ),
+
+        Word(
+            3,
+            "Telephone",
+            R.drawable.telephone,
+            "I use a telephone to make calls.",
+            "Aramalar yapmak için telefon kullanırım.",
+            "Telefon",
+            "Electronics"
+        ),
+
+        Word(
+            4,
+            "Airplane",
+            R.drawable.airplane,
+            "I travel by airplane when I go on vacation.",
+            "Tatile gittiğimde uçakla seyahat ederim.",
+            "Uçak",
+            "Transportation"
+        ),
+
+        Word(
+            5,
+            "Apple",
+            R.drawable.apple,
+            "I eat an apple every day.",
+            "Her gün bir elma yerim.",
+            "Elma",
+            "Food"
+        ),
+
+        //Avocado
+        Word(
+            6,
+            "Avocado",
+            R.drawable.avocado,
+            "I eat avocado toast for breakfast.",
+            "Kahvaltıda avokado tostu yerim.",
+            "Avokado",
+            "Food"
+        ),
+
+        //Christmas Balls
+        Word(
+            7,
+            "Christmas Balls",
+            R.drawable.balls,
+            "I decorate the Christmas tree with Christmas balls.",
+            "Noel ağacını noel topları ile süslerim.",
+            "Noel Topları",
+            "Decor"
+        ),
+
+        //Banana
+        Word(
+            8,
+            "Banana",
+            R.drawable.banana,
+            "I eat a banana every day.",
+            "Her gün bir muz yerim.",
+            "Muz",
+            "Food"
+        ),
+
+        //Blueberry
+        Word(
+            9,
+            "Blueberry",
+            R.drawable.berry,
+            "I eat blueberries with my breakfast.",
+            "Kahvaltıda yaban mersini yerim.",
+            "Yaban Mersini",
+            "Food"
+        ),
+
+        //blackberry
+        Word(
+            10,
+            "Blackberry",
+            R.drawable.blackberry,
+            "I eat blackberries with my breakfast.",
+            "Kahvaltıda böğürtlen yerim.",
+            "Böğürtlen",
+            "Food"
+        ),
+
+        //calculator
+        Word(
+            11,
+            "Calculator",
+            R.drawable.calculator,
+            "I use a calculator to do math homework.",
+            "Matematik ödevi yapmak için hesap makinesi kullanırım.",
+            "Hesap Makinesi",
+            "Stationery"
+        ),
+
+        //Phone
+        Word(
+            12,
+            "Phone",
+            R.drawable.telephone,
+            "I use my phone to call my friends.",
+            "Arkadaşlarımı aramak için telefonumu kullanırım.",
+            "Telefon",
+            "Electronics"
+        ),
+
+        //Car
+        Word(
+            13,
+            "Car",
+            R.drawable.car,
+            "I drive a car to work every day.",
+            "Her gün işe arabayla giderim.",
+            "Araba",
+            "Transportation"
+        ),
+
+        //Chair
+        Word(
+            14,
+            "Chair",
+            R.drawable.chair,
+            "I sit on a chair when I eat dinner.",
+            "Akşam yemeği yerken sandalyede otururum.",
+            "Sandalye",
+            "Furniture"
+        ),
+
+        //Chemistry
+        Word(
+            15,
+            "Chemistry",
+            R.drawable.chemistry,
+            "I study chemistry in school.",
+            "Okulda kimya çalışırım.",
+            "Kimya",
+            "Education"
+        ),
+
+        //Cherries
+        Word(
+            16,
+            "Cherries",
+            R.drawable.cherries,
+            "I eat cherries in the summer.",
+            "Yazın kiraz yerim.",
+            "Kiraz",
+            "Food"
+        ),
+
+        //Christmas bell
+        Word(
+            17,
+            "Christmas Bell",
+            R.drawable.christmas_bell,
+            "I decorate the Christmas tree with Christmas bells.",
+            "Noel ağacını noel çanları ile süslerim.",
+            "Noel Çanları",
+            "Decor"
+        ),
+
+        //Compass
+        Word(
+            18,
+            "Compass",
+            R.drawable.compass,
+            "We use compass in our drawing classes.",
+            "Resim derslerinde pergel kullanırız.",
+            "Pergel",
+            "Tools"
+        ),
+
+        //Tencere
+        Word(
+            19,
+            "Pot",
+            R.drawable.cooking,
+            "I cook soup in a pot.",
+            "Tencerede çorba pişiririm.",
+            "Tencere",
+            "Kitchen"
+        ),
+
+        //El kremi
+        Word(
+            20,
+            "Hand Cream",
+            R.drawable.cream,
+            "I use hand cream to keep my hands soft.",
+            "Ellerimi yumuşak tutmak için el kremi kullanırım.",
+            "El Kremi",
+            "Personal Care"
+        ),
+
+        //Door
+        Word(
+            21,
+            "Door",
+            R.drawable.door,
+            "I close the door when I leave the house.",
+            "Evi terk ederken kapıyı kapatırım.",
+            "Kapı",
+            "Home"
+        ),
+
+        //Drill
+        Word(
+            22,
+            "Drill",
+            R.drawable.drill,
+            "I use a drill to hang pictures on the wall.",
+            "Duvara resim asmak için matkap kullanırım.",
+            "Matkap",
+            "Tools"
+        ),
+
+        //earphone
+        Word(
+            23,
+            "Earphone",
+            R.drawable.earphone,
+            "I use earphones to listen to music.",
+            "Müzik dinlemek için kulaklık kullanırım.",
+            "Kulaklık",
+            "Electronics"
+        ),
+
+        //Teacher
+        Word(
+            24,
+            "Teacher",
+            R.drawable.female,
+            "My teacher teaches me math.",
+            "Öğretmenim bana matematik öğretir.",
+            "Öğretmen",
+            "Education"
+        ),
+
+        //Süs bayraklar
+        Word(
+            25,
+            "Decorative Flags",
+            R.drawable.garlands,
+            "I decorate the garden with decorative flags.",
+            "Bahçeyi süs bayrakları ile süslerim.",
+            "Süs Bayrakları",
+            "Decor"
+        ),
+
+        //Hammer
+        Word(
+            26,
+            "Hammer",
+            R.drawable.hammer,
+            "I use a hammer to hang pictures on the wall.",
+            "Duvara resim asmak için çekiç kullanırım.",
+            "Çekiç",
+            "Tools"
+        ),
+
+        //Kitchen Tools
+        Word(
+            27,
+            "Kitchen Tools",
+            R.drawable.kitchen_tool,
+            "I use kitchen tools to cook.",
+            "Yemek yapmak için mutfak aletleri kullanırım.",
+            "Mutfak Aletleri",
+            "Kitchen"
+        ),
+
+        //Knife
+        Word(
+            28,
+            "Knife",
+            R.drawable.knife,
+            "I use a knife to cut vegetables.",
+            "Sebzeleri kesmek için bıçak kullanırım.",
+            "Bıçak",
+            "Kitchen"
+        ),
+
+        //Pen
+        Word(
+            29,
+            "Pen",
+            R.drawable.pen,
+            "I write with a pen.",
+            "Kalemle yazarım.",
+            "Kalem",
+            "Stationery"
+        ),
+
+        //Perfume
+        Word(
+            30,
+            "Perfume",
+            R.drawable.perfume,
+            "I use perfume to smell good.",
+            "İyi kokmak için parfüm kullanırım.",
+            "Parfüm",
+            "Personal Care"
+        ),
+
+        //Phyisics
+        Word(
+            31,
+            "Physics",
+            R.drawable.relativity,
+            "I study physics in school.",
+            "Okulda fizik çalışırım.",
+            "Fizik",
+            "Education"
+        ),
+
+        //Shelf
+        Word(
+            32,
+            "Shelf",
+            R.drawable.shelf,
+            "I put books on the shelf.",
+            "Rafın üzerine kitap koyarım.",
+            "Raf",
+            "Furniture"
+        ),
+
+        //Truck
+        Word(
+            33,
+            "Truck",
+            R.drawable.shipment,
+            "I drive a truck to transport goods.",
+            "Mal taşımak için kamyon kullanırım.",
+            "Kamyon",
+            "Transportation"
+        ),
+
+        //Stapler
+        Word(
+            34,
+            "Stapler",
+            R.drawable.stapler,
+            "I use a stapler to attach papers together.",
+            "Kağıtları birbirine tutturmak için zımba kullanırım.",
+            "Zımba",
+            "Stationery"
+        ),
+
+        //Table
+        Word(
+            35,
+            "Table",
+            R.drawable.table,
+            "I eat dinner at the table.",
+            "Akşam yemeğini masada yerim.",
+            "Masa",
+            "Furniture"
+        ),
+
+        //Train
+        Word(
+            36,
+            "Train",
+            R.drawable.train,
+            "I travel by train when I go to another city.",
+            "Başka bir şehre gittiğimde trenle seyahat ederim.",
+            "Tren",
+            "Transportation"
+        ),
+
+        //Class
+        Word(
+            37,
+            "Class",
+            R.drawable.training,
+            "I go to class every day.",
+            "Her gün derse giderim.",
+            "Ders",
+            "Education"
+        ),
+
+        //Cetvel
+        Word(
+            38,
+            "Ruler",
+            R.drawable.triangle,
+            "I use a ruler to draw straight lines.",
+            "Düz çizgiler çizmek için cetvel kullanırım.",
+            "Cetvel",
+            "Stationery"
+        ),
+
+        //washing hands
+        Word(
+            39,
+            "Washing Hands",
+            R.drawable.washing_hands,
+            "I wash my hands before eating.",
+            "Yemek yemeden önce ellerimi yıkarım.",
+            "Elleri Yıkama",
+            "Personal Care"
+        ),
+
+        //Watermelon
+        Word(
+            40,
+            "Watermelon",
+            R.drawable.watermelon,
+            "I eat watermelon in the summer.",
+            "Yazın karpuz yerim.",
+            "Karpuz",
+            "Food"
+        ),
+
+        //Window
+        Word(
+            41,
+            "Window",
+            R.drawable.window,
+            "I open the window when it's hot.",
+            "Sıcak olduğunda pencereyi açarım.",
+            "Pencere",
+            "Home"
+        ),
+
+        //Wrench
+        Word(
+            42,
+            "Wrench",
+            R.drawable.wrench,
+            "I use a wrench to fix things.",
+            "Şeyleri tamir etmek için anahtar kullanırım.",
+            "Anahtar",
+            "Tools"
+        ),
+
+        //Bere
+        Word(
+            43,
+            "Beanie",
+            R.drawable.bere,
+            "I wear a beanie in the winter.",
+            "Kışın bere takarım.",
+            "Bere",
+            "Clothing"
+        ),
+
+        //gomlek
+        Word(
+            44,
+            "Shirt",
+            R.drawable.gomlek,
+            "I wear a shirt to work.",
+            "İşe gömlek giyerim.",
+            "Gömlek",
+            "Clothing"
+        ),
+
+        //Dress
+        Word(
+            45,
+            "Dress",
+            R.drawable.dress,
+            "I wear a dress to parties.",
+            "Partilere elbise giyerim.",
+            "Elbise",
+            "Clothing"
+        ),
+
+        //Tshirt
+        Word(
+            46,
+            "T-shirt",
+            R.drawable.shirt,
+            "I wear a t-shirt in the summer.",
+            "Yazın tişört giyerim.",
+            "Tişört",
+            "Clothing"
+        ),
+
+        //Scissors
+        Word(
+            47,
+            "Scissors",
+            R.drawable.scissors,
+            "I use scissors to cut paper.",
+            "Kağıdı kesmek için makas kullanırım.",
+            "Makas",
+            "Stationery"
+        ),
+
+        //push_pin
+        Word(
+            48,
+            "Push Pin",
+            R.drawable.push_pin,
+            "I use push pins to hang pictures on the wall.",
+            "Duvara resim asmak için raptiyeler kullanırım.",
+            "Raptiye",
+            "Stationery"
+        ),
+
+        //Pencil Sharpener
+        Word(
+            49,
+            "Pencil Sharpener",
+            R.drawable.pencil_sharpener,
+            "I use a pencil sharpener to sharpen my pencils.",
+            "Kalemlerimi kalemtıraş ile açarım.",
+            "Kalemtıraş",
+            "Stationery"
+        ),
+
+        //Sofa
+        Word(
+            50,
+            "Sofa",
+            R.drawable.sofa,
+            "I sit on the sofa when I watch TV.",
+            "Televizyon izlerken koltukta otururum.",
+            "Kanepe",
+            "Furniture"
+        ),
+
+        //Crip
+        Word(
+            51,
+            "Crib",
+            R.drawable.crib,
+            "Babies sleep in a crib.",
+            "Bebekler beşikte uyur.",
+            "Beşik",
+            "Furniture"
+        ),
+
+        )
 
 
     init {

@@ -77,9 +77,7 @@ class RandomWordsFragment : Fragment() {
     private fun filterWords(query: String?) {
         val filteredList = if (!query.isNullOrEmpty()) {
             fullWordList.filter {
-                it.englishName.contains(query, ignoreCase = true) || it.turkishName.contains(
-                    query, ignoreCase = true
-                )
+                it.englishName.contains(query, ignoreCase = true) || it.turkishName.contains(query, ignoreCase = true)
             }
         } else {
             fullWordList
@@ -101,7 +99,22 @@ class RandomWordsFragment : Fragment() {
             Gson().fromJson(it, Array<Word>::class.java).toList()
         } ?: emptyList()
 
-        return wordList.filterNot { learnedWords.contains(it) }
+        // Kategori filtrelemesi ekleniyor
+        val selectedCategories = getSelectedCategories()
+        return wordList.filterNot { word ->
+            learnedWords.contains(word) || !selectedCategories.contains(word.category)
+        }
+    }
+
+    private fun getSelectedCategories(): Set<String> {
+        val sharedPreferences: SharedPreferences = requireActivity().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
+        val allCategories = listOf(
+            "Food", "Electronics", "Furniture", "Home", "Clothing", "Personal Care",
+            "Decor", "Tools", "Transportation", "Kitchen", "Stationery", "Education"
+        )
+        return allCategories.filter { category ->
+            sharedPreferences.getBoolean(category, true)
+        }.toSet()
     }
 
     private fun refreshWordList() {
